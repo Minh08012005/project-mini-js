@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1: Đổi Màu Nền</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        transition: background-color 0.4s ease;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 40px 60px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+        color: #333;
+      }
+
+      #colorCode {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        color: #555;
+        letter-spacing: 2px;
+        min-height: 48px;
+      }
+
+      button {
+        padding: 14px 32px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #4a90d9;
+        color: #fff;
+        font-weight: 600;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎨 Trình Đổi Màu Nền</h1>
+      <p id="colorCode">#FFFFFF</p>
+      <button id="changeBtn">Đổi Màu</button>
+    </div>
+
+    <script>
+      // NHIỆM VỤ CỦA BẠN:
+      //
+      // 1. Dùng querySelector để lấy button (#changeBtn)
+      //    và phần tử hiển thị mã màu (#colorCode)
+      //
+      // 2. Viết 1 hàm tạo màu ngẫu nhiên
+      //    Gợi ý: Màu hex có dạng "#RRGGBB"
+      //    R = red (0-255) -> chuyển sang hex
+      //    G = green (0-255) -> chuyển sang hex
+      //    B = blue (0-255) -> chuyển sang hex
+      //
+      // 3. Gán sự kiện 'click' cho button:
+      //    - Gọi hàm tạo màu ngẫu nhiên
+      //    - Đổi màu nền của body: document.body.style.backgroundColor = ...
+      //    - Hiển thị mã màu lên #colorCode
+      //
+      // BẮT ĐẦU CODE CỦA BẠN TỪ DÒNG DƯỚI ĐÂY:
+
+      // Viết code của bạn ở đây...
+    </script>
+  </body>
+</html>
+``` Sau khi bạn tạo file và viết phần JavaScript xong, hãy toggle sang **ACT
+MODE** để tôi giúp bạn đẩy lên GitHub nhé!
