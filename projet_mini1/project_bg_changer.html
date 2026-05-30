@@ -95,8 +95,24 @@
       // BẮT ĐẦU CODE CỦA BẠN TỪ DÒNG DƯỚI ĐÂY:
 
       // Viết code của bạn ở đây...
+      // Buoc 1:
+      var button_1 = document.getElementById("changeBtn");
+      var element_2 = document.getElementById("colorCode");
+
+      function randomColor() {
+        let maHex = "#";
+        for (let i = 0; i <= 2; i++) {
+          let num = Math.random() * 256;
+          num = Math.floor(num);
+          num = num.toString(16);
+          num = num.padStart(2, "0");
+          maHex += num;
+        }
+        document.body.style.backgroundColor = maHex; // không có ngoặc kép
+        element_2.textContent = maHex; // dùng textContent thay vì innerHTML
+      }
+      // Buoc 3
+      button_1.addEventListener("click", randomColor);
     </script>
   </body>
 </html>
-``` Sau khi bạn tạo file và viết phần JavaScript xong, hãy toggle sang **ACT
-MODE** để tôi giúp bạn đẩy lên GitHub nhé!
