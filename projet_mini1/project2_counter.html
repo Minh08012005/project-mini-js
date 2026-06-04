@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2: Counter App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+      }
+
+      .container {
+        text-align: center;
+        background: #fff;
+        padding: 50px 70px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      #countDisplay {
+        font-size: 80px;
+        font-weight: bold;
+        color: #4a90d9;
+        margin: 20px 0;
+        min-height: 100px;
+        line-height: 1;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      button {
+        padding: 12px 28px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      #decreaseBtn {
+        background: #e74c3c;
+        color: #fff;
+      }
+
+      #resetBtn {
+        background: #95a5a6;
+        color: #fff;
+      }
+
+      #increaseBtn {
+        background: #2ecc71;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔢 Bộ Đếm</h1>
+      <p id="countDisplay">0</p>
+      <div class="btn-group">
+        <button id="decreaseBtn">- Giảm</button>
+        <button id="resetBtn">Reset</button>
+        <button id="increaseBtn">Tăng +</button>
+      </div>
+    </div>
+
+    <script>
+      // NHIỆM VỤ CỦA BẠN:
+      //
+      // 1. Lấy các element: #countDisplay, #decreaseBtn, #resetBtn, #increaseBtn
+      //
+      // 2. Tạo biến count = 0 để lưu giá trị hiện tại
+      //
+      // 3. Viết hàm updateDisplay() để cập nhật số hiển thị
+      //    Gợi ý: countDisplay.textContent = count
+      //
+      // 4. Gán sự kiện click cho 3 nút:
+      //    - increaseBtn: tăng count lên 1, gọi updateDisplay()
+      //    - decreaseBtn: giảm count xuống 1, gọi updateDisplay()
+      //      (thử thêm: không cho count < 0)
+      //    - resetBtn: đặt count = 0, gọi updateDisplay()
+      //
+      // BẮT ĐẦU CODE CỦA BẠN TỪ DÒNG DƯỚI ĐÂY:
+
+      // Viết code của bạn ở đây...
+      let ele_1 = document.getElementById("countDisplay");
+      let ele_2 = document.getElementById("decreaseBtn");
+      let ele_3 = document.getElementById("resetBtn");
+      let ele_4 = document.getElementById("increaseBtn");
+      let count = 0;
+      function updateDisplay() {
+        ele_1.textContent = count;
+      }
+      ele_4.addEventListener("click", function () {
+        count++;
+        updateDisplay();
+      });
+      ele_2.addEventListener("click", function () {
+        // nút Giảm
+        count--;
+        updateDisplay();
+      });
+
+      ele_3.addEventListener("click", function () {
+        // nút Reset
+        count = 0;
+        updateDisplay();
+      });
+    </script>
+  </body>
+</html>

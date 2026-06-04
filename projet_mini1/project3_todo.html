@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 3: To-Do List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+      }
+
+      .container {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 450px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      #taskInput {
+        flex: 1;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      #taskInput:focus {
+        border-color: #4a90d9;
+      }
+
+      #addBtn {
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #4a90d9;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      #addBtn:hover {
+        background: #357abd;
+      }
+
+      #taskList {
+        list-style: none;
+      }
+
+      .task-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        transition: background 0.2s;
+      }
+
+      .task-item:hover {
+        background: #e9ecef;
+      }
+
+      .task-item span {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .delete-btn {
+        padding: 6px 14px;
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        background: #e74c3c;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .delete-btn:hover {
+        background: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📋 To-Do List</h1>
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Nhập công việc..." />
+        <button id="addBtn">Thêm</button>
+      </div>
+      <ul id="taskList">
+        <!-- Danh sách task sẽ được render ở đây -->
+      </ul>
+    </div>
+
+    <script>
+      // NHIỆM VỤ CỦA BẠN:
+      //
+      // 1. Lấy các element: #taskInput, #addBtn, #taskList
+      //
+      // 2. Tạo mảng tasks = [] để lưu danh sách công việc
+      //
+      // 3. Viết hàm renderTasks():
+      //    - Xóa hết nội dung cũ trong #taskList (taskList.innerHTML = "")
+      //    - Dùng forEach để duyệt mảng tasks
+      //    - Với mỗi task, tạo <li class="task-item">
+      //      + Bên trong có <span> chứa nội dung task
+      //      + Và <button class="delete-btn">Xóa</button>
+      //    - Thêm <li> vào #taskList bằng appendChild
+      //
+      // 4. Gán sự kiện click cho #addBtn:
+      //    - Lấy giá trị từ ô input (taskInput.value)
+      //    - Nếu giá trị không rỗng, thêm vào mảng tasks bằng push()
+      //    - Gọi renderTasks()
+      //    - Xóa ô input (taskInput.value = "")
+      //
+      // 5. Xử lý nút Xóa:
+      //    - Khi click nút Xóa, cần biết task đó ở vị trí nào trong mảng
+      //    - Gợi ý: dùng data-index để lưu vị trí, hoặc dùng index từ forEach
+      //    - Xóa task khỏi mảng bằng splice()
+      //    - Gọi renderTasks()
+      //
+      // BẮT ĐẦU CODE CỦA BẠN TỪ DÒNG DƯỚI ĐÂY:
+
+      // Viết code của bạn ở đây...
+      let inputs = document.getElementById("taskInput");
+      let buttons = document.getElementById("addBtn");
+      let lists = document.getElementById("taskList");
+
+      let tasks = [];
+      function renderTasks() {
+        lists.innerHTML = "";
+        tasks.forEach(function (task, index) {
+          let li = document.createElement("li"); // tạo thẻ <li>
+          li.textContent = task; // gán nội dung
+          li.classList.add("task-item");
+          let deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Xóa";
+          deleteBtn.setAttribute("data-index", index);
+          li.appendChild(deleteBtn);
+          deleteBtn.addEventListener("click", function () {
+            let viTri = this.getAttribute("data-index"); // lấy vị trí
+            tasks.splice(viTri, 1); // xóa khỏi mảng
+            renderTasks();
+          });
+          lists.appendChild(li);
+        });
+      }
+      //4. Gán sự kiện click cho #addBtn:
+      buttons.addEventListener("click", function () {
+        let input = document.getElementById("taskInput");
+        let value = input.value;
+        tasks.push(value);
+        renderTasks();
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
