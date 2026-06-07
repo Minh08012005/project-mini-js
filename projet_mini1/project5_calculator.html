@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 5: Simple Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", sans-serif;
+        background: #2c3e50;
+      }
+
+      .container {
+        background: #fff;
+        padding: 40px 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 400px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 24px;
+      }
+
+      .input-group {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .input-group input {
+        flex: 1;
+        padding: 12px 16px;
+        font-size: 18px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        text-align: center;
+      }
+
+      .input-group input:focus {
+        border-color: #3498db;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .btn-group button {
+        flex: 1;
+        padding: 14px;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          background 0.2s;
+        color: #fff;
+      }
+
+      .btn-group button:hover {
+        transform: translateY(-2px);
+      }
+
+      #addBtn {
+        background: #2ecc71;
+      }
+      #subBtn {
+        background: #e74c3c;
+      }
+      #mulBtn {
+        background: #3498db;
+      }
+      #divBtn {
+        background: #f39c12;
+      }
+
+      #result {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        padding: 16px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧮 Simple Calculator</h1>
+      <div class="input-group">
+        <input type="number" id="num1" placeholder="Số thứ nhất" />
+        <input type="number" id="num2" placeholder="Số thứ hai" />
+      </div>
+      <div class="btn-group">
+        <button id="addBtn">+</button>
+        <button id="subBtn">−</button>
+        <button id="mulBtn">×</button>
+        <button id="divBtn">÷</button>
+      </div>
+      <p id="result">0</p>
+    </div>
+
+    <script>
+      // === NHIỆM VỤ CỦA BẠN ===
+      //
+      // 1. Lấy các element: #num1, #num2, #addBtn, #subBtn, #mulBtn, #divBtn, #result
+      //
+      // 2. Gắn sự kiện click cho 4 nút:
+      //    - Nút + : lấy giá trị 2 ô → Number() → cộng → hiển thị
+      //    - Nút − : lấy giá trị 2 ô → Number() → trừ → hiển thị
+      //    - Nút × : lấy giá trị 2 ô → Number() → nhân → hiển thị
+      //    - Nút ÷ : lấy giá trị 2 ô → Number() → chia → hiển thị
+      //      (nếu số thứ 2 = 0 → hiển thị "Không thể chia cho 0")
+      //
+      // BẮT ĐẦU CODE CỦA BẠN TỪ DÒNG DƯỚI ĐÂY:
+
+      // Viết code của bạn ở đây...
+    </script>
+  </body>
+</html>
